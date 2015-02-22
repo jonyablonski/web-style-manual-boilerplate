@@ -1,0 +1,61 @@
+// Breakpoints
+$breakpoints: (
+  small: 30em,
+  medium: 50em,
+  large: 60em,
+  xlarge: 80em
+);
+
+// Animation Settings
+$base-animation-timing: .3s;
+
+// Z-Index Management
+$elements:  nav, site-header, intro;
+
+// Typography
+$base-font-family: 'Museo Slab W01 300', sans-serif;
+$header-font-family: 'Futura W01 Bold', sans-serif;
+
+// Font Sizes
+$base-font-size: ms(0);
+
+// Line height
+$base-line-height: 1.5;
+$header-line-height: 1.25;
+
+// Other Sizes
+$base-border-radius: 3px;
+$base-spacing: $base-line-height * 1em;
+$base-z-index: 0;
+
+// Header Settings
+$header-height: $base-spacing*3;
+
+// Section List Settings
+$section-list__gutter: 4%;
+$section-list__col-count: 3;
+
+// Colors
+$blue--light: #2CACE9;
+$blue--dark: #2E3831;
+$gold: #CBB345;
+$gold--light: #fAEFD1;
+$off-white: #FCF5E3;
+
+// Background Color
+$base-background-color: $off-white;
+
+// Font Colors
+$base-font-color: $blue--dark;
+$base-accent-color: $blue--light;
+$base-font-color-reversed: $gold--light;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+
+// Border color
+$base-border-color: rgba($base-font-color,.2);
+$base-border: 1px solid $base-border-color;

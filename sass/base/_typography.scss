@@ -1,0 +1,96 @@
+body {
+  @include font-feature-settings("kern","liga","frac", "pnum");
+  @include font-normal;
+  -webkit-font-smoothing: antialiased;
+  background-color: $base-background-color;
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-line-height;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  @include font-normal;
+  font-family: $header-font-family;
+  line-height: $header-line-height;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+h1 {
+  font-size: ms(6);
+}
+
+h2 {
+  font-size: ms(5);
+}
+
+h3 {
+  font-size: ms(4);
+}
+
+h4 {
+  font-size: ms(3);
+}
+
+h5 {
+  font-size: ms(2);
+}
+
+h6 {
+  font-size: ms(1);
+}
+
+p {
+  margin: 0 0 ($base-spacing);
+}
+
+a {
+  color: $base-link-color;
+  text-decoration: none;
+  transition: color $base-animation-timing $ease-in-out-quad;
+  cursor: pointer;
+
+  &:hover {
+    color: $hover-link-color;
+  }
+
+  &:active, &:focus {
+    color: $hover-link-color;
+    outline: none;
+  }
+}
+
+hr {
+  border-bottom: $base-border;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-spacing 0;
+}
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
+}
+
+blockquote {
+  margin: $base-spacing 0 $base-spacing/2;
+}
+
+cite {
+  font-size: normal;
+  font-style: normal;
+  font-family:"Futura W01 Bold";
+  font-size: ms(-2);
+
+  &:before {
+    content: "\2014 \00A0";
+  }
+}

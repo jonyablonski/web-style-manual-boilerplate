@@ -1,0 +1,20 @@
+*,
+*:after,
+*:before {
+  box-sizing: border-box;
+}
+
+body {
+	height: auto;
+}
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+    display: block;
+    height: 1px;
+    border: 0;
+    border-top: $base-border;
+    margin: 0 0 $base-spacing/2;
+}
