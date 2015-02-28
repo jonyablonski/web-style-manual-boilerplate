@@ -178,12 +178,12 @@
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); } }
 
-.wsm-header {
+.wsm-header, .section__body {
   *zoom: 1; }
-  .wsm-header:before, .wsm-header:after {
+  .wsm-header:before, .section__body:before, .wsm-header:after, .section__body:after {
     content: " ";
     display: table; }
-  .wsm-header:after {
+  .wsm-header:after, .section__body:after {
     clear: both; }
 
 .screen-reader-text {
@@ -651,16 +651,20 @@ cite {
     .wsm-contents-menu {
       position: absolute;
       top: 0;
-      width: 25%; } }
+      width: 20%; } }
   .wsm-contents-menu.is-sticky {
     position: fixed;
     top: 1.5em; }
 
-@media (min-width: 50em) {
-  .wsm-main {
-    float: left;
-    width: 75%;
-    margin-left: 25%; } }
+.wsm-main {
+  margin: 0 0 1.5em; }
+  @media (min-width: 50em) {
+    .wsm-main {
+      float: left;
+      width: 80%;
+      margin: 0 0 1.5em 20%;
+      padding: 0 0 0 1.5em;
+      border-left: 1px solid rgba(46, 56, 49, 0.2); } }
 
 .wsm-header {
   margin: 0 0 1.5em; }
@@ -702,9 +706,15 @@ cite {
     padding: 0.75em;
     color: #FCF5E3; }
 
-.wsm-contents-menu a {
-  display: block;
-  padding: 0.75em 0; }
+.wsm-contents-menu {
+  display: none; }
+  @media (min-width: 50em) {
+    .wsm-contents-menu {
+      display: block;
+      margin: 0 0 1.5em; } }
+  .wsm-contents-menu a {
+    display: block;
+    padding: 0.75em 0; }
 
 .section {
   margin: 0 0 3em; }
@@ -714,6 +724,25 @@ cite {
   margin: 0 0 1.5em; }
 
 .section__title {
-  font-size: 1.77778em;
+  font-size: 2.37037em;
   margin: 0 0 0.75em; }
 
+.section__body-header {
+  margin: 0 0 1.5em;
+  font-size: 1em; }
+
+.section__entry {
+  float: left;
+  width: 48%;
+  margin: 0 1% 1%; }
+  @media (min-width: 30em) {
+    .section__entry {
+      width: 31.3333%; } }
+  @media (min-width: 50em) {
+    .section__entry {
+      width: 23%; } }
+
+.section__entry-label {
+  font-size: 0.75em;
+  font-family: 'Museo Slab W01 300', sans-serif;
+  text-transform: none; }

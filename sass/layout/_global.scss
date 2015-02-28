@@ -14,10 +14,11 @@
 }
 
 .wsm-contents-menu {
+
 	@include mq(medium) {
 		position: absolute;
 		top: 0;
-		width: 25%;
+		width: 20%;
 	}
 
 	/* States */
@@ -29,9 +30,13 @@
 }
 
 .wsm-main {
+	margin: 0 0 $base-spacing;
+
 	@include mq(medium) {
 		float: left;
-		width: 75%;
-		margin-left: 25%;
+		width: 80%;
+		margin: 0 0 $base-spacing 20%;
+		padding: 0 0 0 $base-spacing;
+		border-left: $base-border;
 	}
 }

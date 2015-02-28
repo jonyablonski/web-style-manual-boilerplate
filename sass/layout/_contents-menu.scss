@@ -1,4 +1,10 @@
 .wsm-contents-menu {
+	display: none;
+
+	@include mq(medium) {
+		display: block;
+		margin: 0 0 $base-spacing;
+	}
 
 	a {
 		display: block;

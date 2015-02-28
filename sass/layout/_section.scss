@@ -8,9 +8,39 @@
 }
 
 .section__title {
-	font-size: ms(2);
+	font-size: ms(3);
 	margin: 0 0 $base-spacing/2;
 }
 
 .section__desc {
+}
+
+.section__body {
+	@extend %clearfix;
+}
+
+.section__body-header {
+	margin: 0 0 $base-spacing;
+	font-size: ms(0);
+}
+
+.section__entry {
+	float: left;
+	width: 48%;
+	margin: 0 1% 1%;
+
+	@include mq(small) {
+		width: 31.3333%;
+	}
+
+	@include mq(medium) {
+		width: 23%;
+	}
+
+}
+
+.section__entry-label {
+	font-size: ms(-1);
+	font-family: $base-font-family;
+	text-transform: none;
 }

@@ -44,6 +44,20 @@ var App = (function () {
   };
 
 
+  var throttle = function(callback, limit) {
+    var wait = false;
+    return function () {
+      if (!wait) {
+        callback.call();
+        wait = true;
+        setTimeout(function () {
+          wait = false;
+        }, limit);
+      }
+    };
+  };
+
+
   var eventCheck = function() {
     var size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
     return removeQuotes(size);
@@ -60,16 +74,20 @@ var App = (function () {
   };
 
 
-  var onResize = debounce(function() {
+  var onResize = throttle(function() {
     eventCheck();
-  }, 300);
+    if ( menu.classList.contains('is-sticky') && eventCheck() == "small" ) {
+      menu.classList.remove('is-sticky');
+    }
+  }, 100);
 
 
   var stickyElement = function(element, offset) {
     var currentScrollY = lastScrollY,
     elementTop = element.offsetTop,
     offsetHeight = offset.clientHeight;
-    if (currentScrollY > offsetHeight) {
+
+    if ( currentScrollY > offsetHeight ) {
       element.classList.add('is-sticky');
     } else if ( currentScrollY < offsetHeight && element.classList.contains('is-sticky') ) {
       element.classList.remove('is-sticky');
