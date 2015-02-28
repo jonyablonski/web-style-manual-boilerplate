@@ -705,3 +705,15 @@ cite {
 .wsm-contents-menu a {
   display: block;
   padding: 0.75em 0; }
+
+.section {
+  margin: 0 0 3em; }
+
+.section__header {
+  border-bottom: 1px solid rgba(46, 56, 49, 0.2);
+  margin: 0 0 1.5em; }
+
+.section__title {
+  font-size: 1.77778em;
+  margin: 0 0 0.75em; }
+

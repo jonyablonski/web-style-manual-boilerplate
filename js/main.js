@@ -69,7 +69,6 @@ var App = (function () {
     var currentScrollY = lastScrollY,
     elementTop = element.offsetTop,
     offsetHeight = offset.clientHeight;
-
     if (currentScrollY > offsetHeight) {
       element.classList.add('is-sticky');
     } else if ( currentScrollY < offsetHeight && element.classList.contains('is-sticky') ) {
@@ -77,7 +76,6 @@ var App = (function () {
     } else {
       return;
     }
-
   };
 
 
@@ -115,7 +113,7 @@ var App = (function () {
       speed: 300,
       easing: 'easeInOutQuad',
       updateURL: false,
-      offset: 100,
+      offset: 24,
       callbackBefore: function ( toggle, anchor ) {}
     });
 

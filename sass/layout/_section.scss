@@ -1,0 +1,16 @@
+.section {
+	margin: 0 0 $base-spacing*2;
+}
+
+.section__header {
+	border-bottom: $base-border;
+	margin: 0 0 $base-spacing;
+}
+
+.section__title {
+	font-size: ms(2);
+	margin: 0 0 $base-spacing/2;
+}
+
+.section__desc {
+}
