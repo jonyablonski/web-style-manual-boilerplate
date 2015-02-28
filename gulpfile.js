@@ -23,13 +23,25 @@ var banner = [
   '\n'
 ].join('');
 
-gulp.task('css', function () {
-    return gulp.src('sass/main.scss')
+gulp.task('css-manual', function () {
+    return gulp.src('sass/manual.scss')
     .pipe(sass({errLogToConsole: true}))
     .pipe(autoprefixer('last 4 version'))
     .pipe(gulp.dest('css/build'))
-    .pipe(minifyCSS())
-    .pipe(rename({ suffix: '.min' }))
+    //.pipe(minifyCSS())
+    //.pipe(rename({ suffix: '.min' }))
+    .pipe(header(banner, { package : package }))
+    .pipe(gulp.dest('css/build'))
+    .pipe(browserSync.reload({stream:true}));
+});
+
+gulp.task('css-theme', function () {
+    return gulp.src('sass/theme.scss')
+    .pipe(sass({errLogToConsole: true}))
+    .pipe(autoprefixer('last 4 version'))
+    .pipe(gulp.dest('css/build'))
+    //.pipe(minifyCSS())
+    //.pipe(rename({ suffix: '.min' }))
     .pipe(header(banner, { package : package }))
     .pipe(gulp.dest('css/build'))
     .pipe(browserSync.reload({stream:true}));
@@ -60,8 +72,8 @@ gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
-gulp.task('default', ['css', 'js', 'browser-sync'], function () {
-    gulp.watch("sass/**/*.scss", ['css']);
+gulp.task('default', ['css-manual','css-theme', 'js', 'browser-sync'], function () {
+    gulp.watch("sass/**/*.scss", ['css-manual', 'css-theme']);
     gulp.watch("js/*.js", ['js']);
     gulp.watch("./**/*.html", ['bs-reload']);
 });

@@ -13,12 +13,29 @@ var App = (function () {
 
   //=== Private Variables ===//
   var body = document.body,
-      enhanceClass = 'cutsmustard';
+      enhanceClass = 'cutsmustard',
+      section = document.querySelectorAll('.section'),
+      menu = document.getElementById('js-content-menu'),
+      menuContents = "";
 
   //=== Private Methods ===//
   var cutsMustard = (function() {
     document.documentElement.className += ' ' + enhanceClass;
   }());
+
+
+  var createMenu = (function() {
+    [].forEach.call(section, function(el) {
+      var id = el.getAttribute('id'),
+      link = "#" + id,
+      text = el.getAttribute('id'),
+      title = text.charAt(0).toUpperCase() + text.substring(1),
+      newLine = "<a href='" + link + "'>" + title + "</a>";
+      menuContents += newLine;
+    });
+    menu.insertAdjacentHTML('beforeend', menuContents);
+  })();
+
 
   //=== Public Methods ===//
   function init() {
