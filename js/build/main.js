@@ -804,13 +804,6 @@ if (!Array.prototype.forEach) {
 	return smoothScroll;
 
 });
-/*
-  * Revealing Module Pattern
-  * 1. Define all of our functions and variables in the private scope
-  * 2. Return an anonymous object with pointers to the private functionality we wished to reveal as public
-  * Reference: http://addyosmani.com/resources/essentialjsdesignpatterns/book/#revealingmodulepatternjavascript
-  */
-
 var App = (function () {
 
   //=== Use Strict ===//
@@ -820,14 +813,78 @@ var App = (function () {
   //=== Private Variables ===//
   var body = document.body,
       enhanceClass = 'cutsmustard',
-      section = document.querySelectorAll('.section'),
-      menu = document.getElementById('js-content-menu'),
-      menuContents = "";
+      lastScrollY = 0,
+      header = document.getElementById('js-header'),
+      menu = document.getElementById('js-contents-menu'),
+      menuContents = "",
+      section = document.querySelectorAll('.section');
 
   //=== Private Methods ===//
   var cutsMustard = (function() {
     document.documentElement.className += ' ' + enhanceClass;
   }());
+
+
+  //=== Scroll ===//
+  var removeQuotes = function(string) {
+    if (typeof string === 'string' || string instanceof String) {
+        string = string.replace(/^['"]+|\s+|\\|(;\s?})+|['"]$/g, '');
+    }
+    return string;
+  };
+
+
+  var debounce = function(func, wait, immediate) {
+    var timeout;
+    return function() {
+      var context = this, args = arguments;
+      var later = function() {
+        timeout = null;
+        if (!immediate) func.apply(context, args);
+      };
+      var callNow = immediate && !timeout;
+      clearTimeout(timeout);
+      timeout = setTimeout(later, wait);
+      if (callNow) func.apply(context, args);
+    };
+  };
+
+
+  var eventCheck = function() {
+    var size = window.getComputedStyle(document.body,':after').getPropertyValue('content');
+    return removeQuotes(size);
+  };
+
+
+  var onScroll = function() {
+    if ( eventCheck() == "medium" ) {
+      lastScrollY = window.pageYOffset;
+      stickyElement(menu, header);
+    } else {
+      return;
+    }
+  };
+
+
+  var onResize = debounce(function() {
+    eventCheck();
+  }, 300);
+
+
+  var stickyElement = function(element, offset) {
+    var currentScrollY = lastScrollY,
+    elementTop = element.offsetTop,
+    offsetHeight = offset.clientHeight;
+
+    if (currentScrollY > offsetHeight) {
+      element.classList.add('is-sticky');
+    } else if ( currentScrollY < offsetHeight && element.classList.contains('is-sticky') ) {
+      element.classList.remove('is-sticky');
+    } else {
+      return;
+    }
+
+  };
 
 
   var createMenu = (function() {
@@ -836,7 +893,7 @@ var App = (function () {
       link = "#" + id,
       text = el.getAttribute('id'),
       title = text.charAt(0).toUpperCase() + text.substring(1),
-      newLine = "<a href='" + link + "'>" + title + "</a>";
+      newLine = "<a href='" + link + "' data-scroll>" + title + "</a>";
       menuContents += newLine;
     });
     menu.insertAdjacentHTML('beforeend', menuContents);
@@ -846,6 +903,19 @@ var App = (function () {
   //=== Public Methods ===//
   function init() {
 
+
+    // Listen for window scroll
+    window.addEventListener('scroll', onScroll, false);
+
+
+    // Listen for window resize
+    window.addEventListener('resize', onResize, false);
+
+
+    // Fire Event Check Function
+    eventCheck();
+
+
     // Initialize SmoothScroll
     smoothScroll.init({
       speed: 300,
@@ -854,6 +924,7 @@ var App = (function () {
       offset: 100,
       callbackBefore: function ( toggle, anchor ) {}
     });
+
 
   }
 

@@ -1,0 +1,3 @@
+@mixin animate($name, $duration: $transition-duration, $timing: $transition-timing, $fill-mode: both) {
+  animation: $name $duration $timing $fill-mode;
+}

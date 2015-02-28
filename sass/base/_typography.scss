@@ -1,12 +1,13 @@
 body {
   @include font-feature-settings("kern","liga","frac", "pnum");
-  @include font-normal;
   -webkit-font-smoothing: antialiased;
   background-color: $base-background-color;
   color: $base-font-color;
   font-family: $base-font-family;
   font-size: $base-font-size;
   line-height: $base-line-height;
+  font-weight: normal;
+  font-style: normal;
 }
 
 h1,
@@ -15,11 +16,12 @@ h3,
 h4,
 h5,
 h6 {
-  @include font-normal;
   font-family: $header-font-family;
   line-height: $header-line-height;
   margin: 0;
   text-transform: uppercase;
+  font-weight: normal;
+  font-style: normal;
 }
 
 h1 {

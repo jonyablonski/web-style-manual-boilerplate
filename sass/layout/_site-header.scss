@@ -1,0 +1,60 @@
+$header-primary-height: $base-spacing*4;
+
+.wsm-header {
+	@extend %clearfix;
+	margin: 0 0 $base-spacing;
+}
+
+.wsm-header__primary {
+	height: $header-primary-height;
+	line-height: $header-primary-height;
+	background-color: $base-accent-color;
+}
+
+
+.wsm-header__secondary {
+	background-color: darken($base-accent-color, 20%);
+}
+
+.wsm-header__branding {
+	display: inline-block;
+	margin: 0 $base-spacing/3 0 0;
+
+	img {
+		vertical-align: middle;
+	}
+
+}
+
+.wsm-header__title {
+	display: inline-block;
+	margin: 0;
+	vertical-align: middle;
+	font-size: ms(0);
+	color: darken($base-accent-color, 40%);
+}
+
+.wsm-header__menu-toggle {
+	display: none;
+}
+
+.wsm-header__nav {
+	float: right;
+
+	a {
+		padding: 0 $base-spacing/2;
+		color: darken($base-accent-color, 40%);
+	}
+
+}
+
+.wsm-header__sections {
+	text-align: right;
+
+	a {
+		display: inline-block;
+		padding: $base-spacing/2;
+		color: $base-background-color;
+	}
+
+}

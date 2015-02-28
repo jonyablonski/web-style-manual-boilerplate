@@ -1,11 +1,11 @@
 /// Utils
-@import 'utils/settings';
 @import 'utils/modular-scale';
 @import 'utils/timing-functions';
 @import 'utils/animations';
 @import 'utils/mixins';
 @import 'utils/placeholders';
 @import 'utils/helpers';
+@import 'utils/settings';
 
 /// Base
 @import 'base/normalize';
@@ -14,6 +14,9 @@
 @import 'base/typography';
 
 /// Layout
+@import 'layout/global';
+@import 'layout/site-header';
+@import 'layout/contents-menu';
 
 /// Components
 

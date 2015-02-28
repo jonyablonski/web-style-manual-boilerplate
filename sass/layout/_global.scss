@@ -1,0 +1,37 @@
+.container {
+	margin: 0 auto;
+	padding: 0 $base-spacing;
+	max-width: map-get($breakpoints, large);
+}
+
+.content {
+	position: relative;
+}
+
+.wsm-contents-menu,
+.wsm-main {
+	width: 100%;
+}
+
+.wsm-contents-menu {
+	@include mq(medium) {
+		position: absolute;
+		top: 0;
+		width: 25%;
+	}
+
+	/* States */
+	&.is-sticky {
+		position: fixed;
+		top: $base-spacing;
+	}
+
+}
+
+.wsm-main {
+	@include mq(medium) {
+		float: left;
+		width: 75%;
+		margin-left: 25%;
+	}
+}

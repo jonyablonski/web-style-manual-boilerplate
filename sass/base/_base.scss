@@ -1,12 +1,31 @@
-*,
-*:after,
-*:before {
+/*
+ * Natural Box Layout Model
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+html {
   box-sizing: border-box;
 }
 
-body {
-	height: auto;
+*,
+*:before,
+*:after {
+  box-sizing: inherit;
 }
+
+
+/*
+ * Set States for Media Query Detection in JS
+ */
+body:after {
+    display: none;
+    content: 'small';
+
+    @include mq(medium) {
+        content: 'medium';
+    }
+
+}
+
 
 /*
  * A better looking default horizontal rule

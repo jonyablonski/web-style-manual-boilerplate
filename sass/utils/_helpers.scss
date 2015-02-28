@@ -1,6 +1,7 @@
-/*
-* Center Text
-*/
-.text-align-center {
-	text-align: center;
+.screen-reader-text {
+	@extend %visuallyhidden;
+}
+
+.text-align-right {
+	text-align: right;
 }

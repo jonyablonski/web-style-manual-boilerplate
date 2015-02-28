@@ -1,0 +1,16 @@
+@mixin img-replace($image: null, $display: null, $reset-border-background: true) {
+  font: 0/0 a;
+  text-shadow: none;
+  color: transparent;
+  // reset the border and background-color
+  // see http://css-tricks.com/examples/ImageReplacement/ -> 2012 H5BP Image Replacement
+  @if $reset-border-background == true {
+    border: 0;
+    background-color: transparent;
+  }
+  @if $image != null {
+    @include image-and-dimensions($image, $display);
+  } @else if $display != null {
+    display: $display;
+  }
+}

@@ -178,60 +178,26 @@
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); } }
 
-/*
-* Media Query Mixin
-*/
-/*
-* Normalize Font Settings
-*/
-/*
-* Absolute Positioning
-*/
-/*
-* Absolute Positioning
-*/
-/*
-* PX/REM Mixin
-*/
-/**
-* Image Replacement
-*/
-/**
-* Retina Images
-*/
-/**
-* Placeholders
-*/
-/**
-* Font Features
-*/
-/**
-* Ellipsis
-*/
-/**
-* Word-Wrap
-*/
-/**
-* Border Radius
-*/
-/*
-* Keyframe Animations
-* http://css-tricks.com/snippets/css/keyframe-animation-syntax/
-*/
-/*
-* Transitions
-*/
-/**
-* Clearfix
-*/
-/**
-* Visually-HIdden
-*/
-/*
-* Center Text
-*/
-.text-align-center {
-  text-align: center; }
+.wsm-header {
+  *zoom: 1; }
+  .wsm-header:before, .wsm-header:after {
+    content: " ";
+    display: table; }
+  .wsm-header:after {
+    clear: both; }
+
+.screen-reader-text {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute; }
+
+.text-align-right {
+  text-align: right; }
 
 /*! normalize.css v3.0.2 | MIT License | git.io/normalize */
 /**
@@ -550,11 +516,25 @@ table {
 td, th {
   padding: 0; }
 
-*, *:after, *:before {
+/*
+ * Natural Box Layout Model
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+html {
   box-sizing: border-box; }
 
-body {
-  height: auto; }
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*
+ * Set States for Media Query Detection in JS
+ */
+body:after {
+  display: none;
+  content: 'small'; }
+  @media (min-width: 50em) {
+    body:after {
+      content: 'medium'; } }
 
 /*
  * A better looking default horizontal rule
@@ -583,22 +563,22 @@ hr {
   src: url("../../../fonts/39a8c847-6d65-44ec-92e6-46e2aa8db834.eot?#iefix") format("eot"), url("../../../fonts/4548ac88-af2c-4b63-ac2b-94e9ef6cd1b9.woff") format("woff"), url("../../../fonts/380327b2-8e54-40b1-a569-eb17e46f7e17.ttf") format("truetype"), url("../../../fonts/dedfb9ca-341f-404d-b76e-d781f9ee375f.svg#dedfb9ca-341f-404d-b76e-d781f9ee375f") format("svg"); }
 
 body {
-  font-weight: normal;
-  font-style: normal;
   -webkit-font-smoothing: antialiased;
   background-color: #FCF5E3;
   color: #2E3831;
   font-family: 'Museo Slab W01 300', sans-serif;
-  font-size: ms(0);
-  line-height: 1.5; }
+  font-size: 1em;
+  line-height: 1.5;
+  font-weight: normal;
+  font-style: normal; }
 
 h1, h2, h3, h4, h5, h6 {
-  font-weight: normal;
-  font-style: normal;
   font-family: 'Futura W01 Bold', sans-serif;
   line-height: 1.25;
   margin: 0;
-  text-transform: uppercase; }
+  text-transform: uppercase;
+  font-weight: normal;
+  font-style: normal; }
 
 h1 {
   font-size: 5.61866em; }
@@ -653,3 +633,75 @@ cite {
   font-size: 0.5625em; }
   cite:before {
     content: "\2014 \00A0"; }
+
+.container {
+  margin: 0 auto;
+  padding: 0 1.5em;
+  max-width: 60em; }
+
+.content {
+  position: relative; }
+
+.wsm-contents-menu, .wsm-main {
+  width: 100%; }
+
+.wsm-contents-menu {
+  /* States */ }
+  @media (min-width: 50em) {
+    .wsm-contents-menu {
+      position: absolute;
+      top: 0;
+      width: 25%; } }
+  .wsm-contents-menu.is-sticky {
+    position: fixed;
+    top: 1.5em; }
+
+@media (min-width: 50em) {
+  .wsm-main {
+    float: left;
+    width: 75%;
+    margin-left: 25%; } }
+
+.wsm-header {
+  margin: 0 0 1.5em; }
+
+.wsm-header__primary {
+  height: 6em;
+  line-height: 6em;
+  background-color: #2CACE9; }
+
+.wsm-header__secondary {
+  background-color: #11719e; }
+
+.wsm-header__branding {
+  display: inline-block;
+  margin: 0 0.5em 0 0; }
+  .wsm-header__branding img {
+    vertical-align: middle; }
+
+.wsm-header__title {
+  display: inline-block;
+  margin: 0;
+  vertical-align: middle;
+  font-size: 1em;
+  color: #072f42; }
+
+.wsm-header__menu-toggle {
+  display: none; }
+
+.wsm-header__nav {
+  float: right; }
+  .wsm-header__nav a {
+    padding: 0 0.75em;
+    color: #072f42; }
+
+.wsm-header__sections {
+  text-align: right; }
+  .wsm-header__sections a {
+    display: inline-block;
+    padding: 0.75em;
+    color: #FCF5E3; }
+
+.wsm-contents-menu a {
+  display: block;
+  padding: 0.75em 0; }
