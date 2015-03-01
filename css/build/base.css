@@ -543,7 +543,7 @@ hr {
   display: block;
   height: 1px;
   border: 0;
-  border-top: 1px solid rgba(46, 56, 49, 0.2);
+  border-top: 1px solid rgba(46, 56, 49, 0.1);
   margin: 0 0 0.75em; }
 
 /*
@@ -613,7 +613,7 @@ a {
     outline: none; }
 
 hr {
-  border-bottom: 1px solid rgba(46, 56, 49, 0.2);
+  border-bottom: 1px solid rgba(46, 56, 49, 0.1);
   border-left: none;
   border-right: none;
   border-top: none;
@@ -664,7 +664,7 @@ cite {
       width: 80%;
       margin: 0 0 1.5em 20%;
       padding: 0 0 0 1.5em;
-      border-left: 1px solid rgba(46, 56, 49, 0.2); } }
+      border-left: 1px solid rgba(46, 56, 49, 0.1); } }
 
 .wsm-header {
   margin: 0 0 1.5em; }
@@ -691,7 +691,8 @@ cite {
   margin: 1.5em 0;
   vertical-align: middle;
   font-size: 1em;
-  color: #072f42; }
+  letter-spacing: .05em;
+  color: #0c5070; }
   @media (min-width: 30em) {
     .wsm-header__title {
       margin: 0; } }
@@ -699,17 +700,19 @@ cite {
     vertical-align: middle;
     margin: 0 0.5em 0 0; }
   .wsm-header__title a {
-    color: #11719e;
-    padding: 0; }
+    padding: 0;
+    color: #072f42; }
 
 .wsm-header__menu-toggle {
   display: inline-block;
-  float: right;
-  line-height: 6em;
   cursor: pointer; }
   @media (min-width: 30em) {
     .wsm-header__menu-toggle {
       display: none; } }
+  .wsm-header__menu-toggle:before {
+    display: inline-block;
+    content: '/';
+    padding: 0 1em; }
 
 .wsm-header__nav {
   display: none;
@@ -753,21 +756,26 @@ cite {
   margin: 0 0 3em; }
 
 .section__header {
-  border-bottom: 1px solid rgba(46, 56, 49, 0.2);
+  border-bottom: 1px solid rgba(46, 56, 49, 0.1);
   margin: 0 0 1.5em; }
 
 .section__title {
   font-size: 2.37037em;
   margin: 0 0 0.75em; }
 
+.section__body {
+  margin: 0 0 1.5em; }
+
 .section__body-header {
+  width: 100%;
   margin: 0 0 1.5em;
   font-size: 1em; }
 
 .section__entry {
   float: left;
   width: 48%;
-  margin: 0 1% 1%; }
+  margin: 0 1% 1%;
+  text-align: center; }
   @media (min-width: 30em) {
     .section__entry {
       width: 31.3333%; } }
@@ -776,6 +784,26 @@ cite {
       width: 23%; } }
 
 .section__entry-label {
+  margin: 0.75em 0;
   font-size: 0.75em;
   font-family: 'Museo Slab W01 300', sans-serif;
   text-transform: none; }
+
+.box {
+  padding: 1em;
+  border: 1px solid rgba(46, 56, 49, 0.1);
+  text-align: center; }
+
+.swatch {
+  padding-top: 7.5em;
+  border-radius: 3px;
+  outline: 1px solid rgba(46, 56, 49, 0.1); }
+
+.swatch__label {
+  padding: 0.75em;
+  font-size: 0.75em;
+  font-family: 'Museo Slab W01 300', sans-serif;
+  font-weight: bold;
+  letter-spacing: .05em;
+  text-transform: none;
+  background-color: #fff; }

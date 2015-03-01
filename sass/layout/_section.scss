@@ -17,9 +17,11 @@
 
 .section__body {
 	@extend %clearfix;
+	margin: 0 0 $base-spacing;
 }
 
 .section__body-header {
+	width: 100%;
 	margin: 0 0 $base-spacing;
 	font-size: ms(0);
 }
@@ -28,6 +30,7 @@
 	float: left;
 	width: 48%;
 	margin: 0 1% 1%;
+	text-align: center;
 
 	@include mq(small) {
 		width: 31.3333%;
@@ -40,6 +43,7 @@
 }
 
 .section__entry-label {
+	margin: $base-spacing/2 0;
 	font-size: ms(-1);
 	font-family: $base-font-family;
 	text-transform: none;

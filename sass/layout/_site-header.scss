@@ -38,7 +38,8 @@ $header-primary-height: $base-spacing*4;
 	margin: $base-spacing 0;
 	vertical-align: middle;
 	font-size: ms(0);
-	color: darken($base-accent-color, 40%);
+	letter-spacing: .05em;
+	color: darken($base-accent-color, 30%);
 
 	@include mq(small) {
 		margin: 0;
@@ -50,20 +51,24 @@ $header-primary-height: $base-spacing*4;
 	}
 
 	a {
-		color: darken($base-accent-color, 20%);
 		padding: 0;
+		color: darken($base-accent-color, 40%);
 	}
 
 }
 
 .wsm-header__menu-toggle {
 	display: inline-block;
-	float: right;
-	line-height: $header-primary-height;
 	cursor: pointer;
 
 	@include mq(small) {
 		display: none;
+	}
+
+	&:before {
+		display: inline-block;
+		content: '/';
+		padding: 0 1em;
 	}
 
 }
