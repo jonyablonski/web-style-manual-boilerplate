@@ -3,12 +3,29 @@ $header-primary-height: $base-spacing*4;
 .wsm-header {
 	@extend %clearfix;
 	margin: 0 0 $base-spacing;
+
+	a {
+		display: block;
+		padding: $base-spacing/2 0;
+
+		@include mq(small) {
+			display: inline-block;
+			padding: 0 $base-spacing/2;
+		}
+
+	}
+
 }
 
 .wsm-header__primary {
-	height: $header-primary-height;
-	line-height: $header-primary-height;
+	@extend %clearfix;
 	background-color: $base-accent-color;
+
+	@include mq(small) {
+		height: $header-primary-height;
+		line-height: $header-primary-height;
+	}
+
 }
 
 
@@ -16,45 +33,78 @@ $header-primary-height: $base-spacing*4;
 	background-color: darken($base-accent-color, 20%);
 }
 
-.wsm-header__branding {
+.wsm-header__title {
 	display: inline-block;
-	margin: 0 $base-spacing/3 0 0;
+	margin: $base-spacing 0;
+	vertical-align: middle;
+	font-size: ms(0);
+	color: darken($base-accent-color, 40%);
+
+	@include mq(small) {
+		margin: 0;
+	}
 
 	img {
 		vertical-align: middle;
+		margin: 0 $base-spacing/3 0 0;
+	}
+
+	a {
+		color: darken($base-accent-color, 20%);
+		padding: 0;
 	}
 
 }
 
-.wsm-header__title {
-	display: inline-block;
-	margin: 0;
-	vertical-align: middle;
-	font-size: ms(0);
-	color: darken($base-accent-color, 40%);
-}
-
 .wsm-header__menu-toggle {
-	display: none;
+	display: inline-block;
+	float: right;
+	line-height: $header-primary-height;
+	cursor: pointer;
+
+	@include mq(small) {
+		display: none;
+	}
+
 }
 
 .wsm-header__nav {
-	float: right;
+	display: none;
+	float: left;
+	width: 100%;
+
+	@include mq(small) {
+		display: block;
+		float: right;
+		width: auto;
+	}
 
 	a {
-		padding: 0 $base-spacing/2;
 		color: darken($base-accent-color, 40%);
+	}
+
+	/* States */
+	.nav-is-toggled & {
+		display: block;
 	}
 
 }
 
 .wsm-header__sections {
-	text-align: right;
+	display: none;
+	@include mq(small) {
+		display: block;
+		padding: $base-spacing/2 0;
+		text-align: right;
+	}
 
 	a {
-		display: inline-block;
-		padding: $base-spacing/2;
 		color: $base-background-color;
+	}
+
+	/* States */
+	.nav-is-toggled & {
+		display: block;
 	}
 
 }

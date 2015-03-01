@@ -23,8 +23,8 @@ var banner = [
   '\n'
 ].join('');
 
-gulp.task('css-manual', function () {
-    return gulp.src('sass/manual.scss')
+gulp.task('css-base', function () {
+    return gulp.src('sass/base.scss')
     .pipe(sass({errLogToConsole: true}))
     .pipe(autoprefixer('last 4 version'))
     .pipe(gulp.dest('css/build'))
@@ -35,8 +35,8 @@ gulp.task('css-manual', function () {
     .pipe(browserSync.reload({stream:true}));
 });
 
-gulp.task('css-theme', function () {
-    return gulp.src('sass/theme.scss')
+gulp.task('css-styleguide', function () {
+    return gulp.src('sass/styleguide.scss')
     .pipe(sass({errLogToConsole: true}))
     .pipe(autoprefixer('last 4 version'))
     .pipe(gulp.dest('css/build'))
@@ -72,8 +72,8 @@ gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
-gulp.task('default', ['css-manual','css-theme', 'js', 'browser-sync'], function () {
-    gulp.watch("sass/**/*.scss", ['css-manual', 'css-theme']);
+gulp.task('default', ['css-base','css-styleguide', 'js', 'browser-sync'], function () {
+    gulp.watch("sass/**/*.scss", ['css-base', 'css-styleguide']);
     gulp.watch("js/*.js", ['js']);
     gulp.watch("*.html", ['bs-reload']);
 });

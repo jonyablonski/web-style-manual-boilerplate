@@ -813,8 +813,10 @@ var App = (function () {
   //=== Private Variables ===//
   var body = document.body,
       enhanceClass = 'cutsmustard',
+      toggledNavClass = 'nav-is-toggled',
       lastScrollY = 0,
       header = document.getElementById('js-header'),
+      headerToggle = document.getElementById('js-header-toggle'),
       menu = document.getElementById('js-contents-menu'),
       menuContents = "",
       section = document.querySelectorAll('.section');
@@ -888,6 +890,16 @@ var App = (function () {
   }, 100);
 
 
+  var toggleNav = function(event) {
+    if (body.classList.contains(toggledNavClass) ) {
+      body.classList.remove(toggledNavClass);
+    } else {
+      body.classList.add(toggledNavClass);
+    }
+    event.preventDefault();
+  };
+
+
   var stickyElement = function(element, offset) {
     var currentScrollY = lastScrollY,
     elementTop = element.offsetTop,
@@ -926,6 +938,10 @@ var App = (function () {
 
     // Listen for window resize
     window.addEventListener('resize', onResize, false);
+
+
+    // Listen for Clicks on #js-nav-toggle
+    headerToggle.addEventListener('click', toggleNav, false);
 
 
     // Fire Event Check Function
