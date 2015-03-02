@@ -1,0 +1,83 @@
+/*!
+ * Web Style Manual Boilerplate
+ * A simple styleguide boilerplate for web projects
+ * http://jonyablonski.com
+ * @author Jon Yablosnki
+ * @version 1.0.0
+ * Copyright 2015. MIT licensed.
+ */
+/*
+* Headline Font / Futura Bold
+*/
+@font-face {
+  font-family: "Futura W01 Bold";
+  src: url("../../../fonts/3b3d00eb-6d89-47ec-83ee-48276a47ad94.eot?#iefix");
+  src: url("../../../fonts/3b3d00eb-6d89-47ec-83ee-48276a47ad94.eot?#iefix") format("eot"), url("../../../fonts/2a65cbfc-5071-4b4d-bfc2-e052bb091ee2.woff") format("woff"), url("../../../fonts/812f781d-aa66-47a1-b6a2-7941effc1527.ttf") format("truetype"), url("../../../fonts/2a371030-ff67-40ac-8307-082c1fccf151.svg#2a371030-ff67-40ac-8307-082c1fccf151") format("svg"); }
+
+/*
+* Body Font / Museo Slab
+*/
+@font-face {
+  font-family: "Museo Slab W01 300";
+  src: url("../../../fonts/39a8c847-6d65-44ec-92e6-46e2aa8db834.eot?#iefix");
+  src: url("../../../fonts/39a8c847-6d65-44ec-92e6-46e2aa8db834.eot?#iefix") format("eot"), url("../../../fonts/4548ac88-af2c-4b63-ac2b-94e9ef6cd1b9.woff") format("woff"), url("../../../fonts/380327b2-8e54-40b1-a569-eb17e46f7e17.ttf") format("truetype"), url("../../../fonts/dedfb9ca-341f-404d-b76e-d781f9ee375f.svg#dedfb9ca-341f-404d-b76e-d781f9ee375f") format("svg"); }
+
+body {
+  color: #2E3831;
+  font-family: 'Museo Slab W01 300', sans-serif;
+  font-size: ms(0);
+  line-height: 1.5;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+  background-color: #FCF5E3; }
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Futura W01 Bold', sans-serif;
+  line-height: 1.25;
+  margin: 0;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-style: normal; }
+
+h1 {
+  font-size: ms(6); }
+
+h2 {
+  font-size: ms(5); }
+
+h3 {
+  font-size: ms(4); }
+
+h4 {
+  font-size: ms(3); }
+
+h5 {
+  font-size: ms(2); }
+
+h6 {
+  font-size: ms(1); }
+
+p {
+  margin: 0 0 1.5em; }
+
+a {
+  color: #2CACE9;
+  text-decoration: none;
+  cursor: pointer; }
+  a:hover {
+    color: #1381b6; }
+  a:active, a:focus {
+    color: #1381b6;
+    outline: none; }
+
+blockquote {
+  margin: 1.5em 0 0.75em; }
+
+cite {
+  font-size: normal;
+  font-style: normal;
+  font-family: "Futura W01 Bold";
+  font-size: ms(-2); }
+  cite:before {
+    content: "\2014 \00A0"; }

@@ -3,6 +3,12 @@ $header-primary-height: $base-spacing*4;
 .wsm-header {
 	@extend %clearfix;
 	margin: 0 0 $base-spacing;
+	background-color: $base-accent-color;
+
+	@include mq(small) {
+		height: $header-primary-height;
+		line-height: $header-primary-height;
+	}
 
 	a {
 		display: block;
@@ -15,22 +21,6 @@ $header-primary-height: $base-spacing*4;
 
 	}
 
-}
-
-.wsm-header__primary {
-	@extend %clearfix;
-	background-color: $base-accent-color;
-
-	@include mq(small) {
-		height: $header-primary-height;
-		line-height: $header-primary-height;
-	}
-
-}
-
-
-.wsm-header__secondary {
-	background-color: darken($base-accent-color, 20%);
 }
 
 .wsm-header__title {
@@ -82,25 +72,6 @@ $header-primary-height: $base-spacing*4;
 		display: block;
 		float: right;
 		width: auto;
-	}
-
-	a {
-		color: darken($base-accent-color, 40%);
-	}
-
-	/* States */
-	.nav-is-toggled & {
-		display: block;
-	}
-
-}
-
-.wsm-header__sections {
-	display: none;
-	@include mq(small) {
-		display: block;
-		padding: $base-spacing/2 0;
-		text-align: right;
 	}
 
 	a {

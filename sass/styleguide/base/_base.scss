@@ -31,9 +31,16 @@ body:after {
  * A better looking default horizontal rule
  */
 hr {
-    display: block;
-    height: 1px;
-    border: 0;
-    border-top: $base-border;
-    margin: 0 0 $base-spacing/2;
+  border-bottom: $base-border;
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: $base-spacing 0;
+}
+
+
+img,
+picture {
+  margin: 0;
+  max-width: 100%;
 }
