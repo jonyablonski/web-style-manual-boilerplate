@@ -6,11 +6,8 @@ $breakpoints: (
   xlarge: 80em
 );
 
-// Animation Settings
-$base-animation-timing: .3s !default;
-
 // Z-Index Management
-$elements:  nav, site-header, intro;
+$elements: nav, site-header, intro;
 
 // Typography
 $base-font-family: 'Museo Slab W01 300', sans-serif !default;
