@@ -721,9 +721,11 @@ img, picture {
   text-transform: none; }
 
 .box {
-  padding: 1em;
   border: 1px solid rgba(46, 56, 49, 0.1);
   text-align: center; }
+  .box img {
+    display: inline;
+    vertical-align: middle; }
 
 .swatch {
   padding-top: 7.5em;

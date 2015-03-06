@@ -122,6 +122,23 @@ var App = (function () {
   })();
 
 
+  var equalHeightBoxes = (function() {
+    var boxes = document.querySelectorAll('.box');
+    var tallest = 0;
+
+    [].forEach.call(boxes, function(el) {
+        var eleHeight = el.offsetHeight;
+        tallest = (eleHeight > tallest ? eleHeight : tallest);
+    });
+
+    [].forEach.call(boxes, function(el) {
+        el.style.height = tallest + 48 + 'px';
+        el.style.lineHeight = tallest + 48 + 'px';
+    });
+
+  })();
+
+
   //=== Public Methods ===//
   function init() {
 
