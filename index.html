@@ -31,18 +31,18 @@
 
 
       <!-- Global Header -->
-      <header id="js-header" class="wsm-header" role="banner">
-        <div class="wsm-header__primary">
+      <header id="js-header" class="header" role="banner">
+        <div class="header__primary">
           <div class="container">
-            <h1 class="wsm-header__title">
+            <h1 class="header__title">
               <a href="index.html">Web Style Manual</a>
             </h1>
           </div>
         </div>
-        <div id="js-header-toggle" class="wsm-header__menu-toggle">Menu</div>
-        <div class="wsm-header__secondary">
+        <div id="js-header-toggle" class="header__menu-toggle">Menu</div>
+        <div class="header__secondary">
           <div class="container">
-            <nav class="wsm-header__nav">
+            <nav class="header__nav">
               <a href="index.html">Design</a>
               <a href="components.html">Components</a>
               <a href="utils.html">Utilities</a>
@@ -56,167 +56,133 @@
       <div class="content container">
 
 
-        <!-- Table of Contents -->
-        <nav id="js-contents-menu" class="wsm-contents-menu">
+        <!-- Table of Contents (Populated automatically via JS) -->
+        <nav id="js-contents-menu" class="contents-menu">
         </nav>
         <!-- Table of Contents -->
 
 
         <!-- Main Content -->
-        <main class="wsm-main" role="main">
+        <main class="main" role="main">
+
 
           <!-- Branding -->
           <section id="branding" class="section">
             <header class="section__header">
-              <h1 class="section__title">Branding</h1>
-              <p class="section__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima cum vero mollitia suscipit, reprehenderit voluptatibus expedita saepe, facilis sunt odio architecto sit repudiandae impedit. Dolores dignissimos inventore hic. Omnis.</p>
+              <h1 class="section__header-title">Branding</h1>
+              <p class="section__header-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima cum vero mollitia suscipit, reprehenderit voluptatibus expedita saepe, facilis sunt odio architecto sit repudiandae impedit. Dolores dignissimos inventore hic. Omnis.</p>
             </header>
 
-            <div class="section__body">
-              <h2 class="section__body-header">Logo Variations</h2>
-
-              <article class="section__entry">
-                <div class="box">
-                  <img src="./images/logo_sml.svg" width="60">
-                </div>
-                <h3 class="section__entry-label">Normal</h3>
-              </article>
-
-              <article class="section__entry">
-                <div class="box" style="background-color: #2CACE9">
-                  <img src="./images/logo_sml.svg" width="60">
-                </div>
-                <h3 class="section__entry-label">On Background</h3>
-              </article>
-
-            </div><!-- .section__body -->
+            <article class="section__content">
+              <h2 class="section__content-title">Logo Variations</h2>
+              <div class="box">
+                <img src="./images/logo_sml.svg" width="60">
+              </div>
+            </article>
           </section>
           <!-- Branding -->
+
 
           <!-- Colors -->
           <section id="colors" class="section">
             <header class="section__header">
-              <h1 class="section__title">Colors</h1>
-              <p class="section__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima cum vero mollitia suscipit, reprehenderit voluptatibus expedita saepe, facilis sunt odio architecto sit repudiandae impedit. Dolores dignissimos inventore hic.</p>
+              <h1 class="section__header-title">Colors</h1>
+              <p class="section__header-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima cum vero mollitia suscipit, reprehenderit voluptatibus expedita saepe, facilis sunt odio architecto sit repudiandae impedit. Dolores dignissimos inventore hic.</p>
             </header>
 
-            <div class="section__body">
-              <h2 class="section__body-header">Primary Colors</h2>
-
-              <article class="section__entry">
-                <div class="swatch" style="background-color: #2CACE9">
-                  <div class="swatch__label">Blue</div>
-                </div>
-                <h3 class="section__entry-label">RBG: #2CACE9</h3>
-              </article>
-
-              <article class="section__entry">
-                <div class="swatch" style="background-color: #2E3831">
-                  <div class="swatch__label">Grey</div>
-                </div>
-                <h3 class="section__entry-label">RBG: #2E3831</h3>
-              </article>
-
-              <article class="section__entry">
-                <div class="swatch" style="background-color: #161B18">
-                  <div class="swatch__label">Dark Grey</div>
-                </div>
-                <h3 class="section__entry-label">RBG: #161B18</h3>
-              </article>
-
-              <article class="section__entry">
-                <div class="swatch" style="background-color: #FCF5E3">
-                  <div class="swatch__label">Off-White</div>
-                </div>
-                <h3 class="section__entry-label">RBG: #FCF5E3</h3>
-              </article>
-
-            </div><!-- .section__body -->
+            <article class="section__content">
+              <h2 class="section__content-title">Primary Colors</h2>
+              <div class="swatch sg-swatch-1">
+                <div class="swatch__label">Blue</div>
+              </div>
+              <div class="swatch sg-swatch-2">
+                <div class="swatch__label">Grey</div>
+              </div>
+              <div class="swatch sg-swatch-3">
+                <div class="swatch__label">Off-White</div>
+              </div>
+            </article>
           </section>
           <!-- Colors -->
+
 
           <!-- Textures -->
           <section id="texture" class="section">
             <header class="section__header">
-              <h1 class="section__title">Textures</h1>
-              <p class="section__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima cum vero mollitia suscipit, reprehenderit voluptatibus expedita saepe, facilis sunt odio architecto sit repudiandae impedit. Dolores dignissimos inventore hic. Omnis.</p>
+              <h1 class="section__header-title">Textures</h1>
+              <p class="section__header-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima cum vero mollitia suscipit, reprehenderit voluptatibus expedita saepe, facilis sunt odio architecto sit repudiandae impedit. Dolores dignissimos inventore hic. Omnis.</p>
             </header>
 
-            <div class="section__body">
-              <h2 class="section__body-header">Texture Variations</h2>
-
-              <article class="section__entry">
-                <div class="swatch" style="background: url(./images/halftone.png)">
-                  <div class="swatch__label">Halftone</div>
-                </div>
-              </article>
-
-            </div><!-- .section__body -->
+            <article class="section__content">
+              <h2 class="section__content-title">Texture Variations</h2>
+              <div class="swatch sg-texture-1">
+                <div class="swatch__label">Halftone</div>
+              </div>
+            </article>
           </section>
           <!-- Textures -->
+
 
           <!-- Typography -->
           <section id="typography" class="section">
             <header class="section__header">
-              <h1 class="section__title">Typography</h1>
-              <p class="section__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima cum vero mollitia suscipit, reprehenderit voluptatibus expedita saepe, facilis sunt odio architecto sit repudiandae impedit. Dolores dignissimos inventore hic. Omnis.</p>
+              <h1 class="section__header-title">Typography</h1>
+              <p class="section__header-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima cum vero mollitia suscipit, reprehenderit voluptatibus expedita saepe, facilis sunt odio architecto sit repudiandae impedit. Dolores dignissimos inventore hic. Omnis.</p>
             </header>
 
-            <div class="section__body">
-              <h2 class="section__body-header">Headings</h2>
-                <h1>Eagle</h1>
-                <h2>Bear</h2>
-                <h3>Deer</h3>
-                <h4>Badger</h4>
-                <h5>Trout</h5>
-                <h6>Frog</h6>
+            <article class="section__content">
+              <h2 class="section__content-title">Headings</h2>
+              <h1>Heading</h1>
+              <div class="section__content-label">4.209em</div>
 
-              <h2 class="section__body-header">Body</h2>
-            </div><!-- .section__body -->
+              <h2>Heading</h2>
+              <div class="section__content-label">3.157em</div>
+
+              <h3>Heading</h3>
+              <div class="section__content-label">2.369em</div>
+
+              <h4>Heading</h4>
+              <div class="section__content-label">1.777em</div>
+
+              <h5>Heading</h5>
+              <div class="section__content-label">1.333em</div>
+
+              <h6>Heading</h6>
+              <div class="section__content-label">1em</div>
+            </article>
           </section>
           <!-- Typography -->
+
 
           <!-- Iconography -->
           <section id="iconography" class="section">
             <header class="section__header">
-              <h1 class="section__title">Iconography</h1>
-              <p class="section__desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima cum vero mollitia suscipit, reprehenderit voluptatibus expedita saepe, facilis sunt odio architecto sit repudiandae impedit. Dolores dignissimos inventore hic. Omnis.</p>
+              <h1 class="section__header-title">Iconography</h1>
+              <p class="section__header-desc">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Voluptate minima cum vero mollitia suscipit, reprehenderit voluptatibus expedita saepe, facilis sunt odio architecto sit repudiandae impedit. Dolores dignissimos inventore hic. Omnis.</p>
             </header>
 
-            <div class="section__body">
-              <article class="section__entry">
-                <div class="box">
-                  <img src="./images/campfire.svg" alt="">
-                </div>
-                <h3 class="section__entry-label">Campfire</h3>
-              </article>
+            <article class="section__content">
+              <div class="box">
+                <img src="./images/campfire.svg" alt="">
+              </div>
 
-              <article class="section__entry">
-                <div class="box">
-                  <img src="./images/guide.svg" alt="">
-                </div>
-                <h3 class="section__entry-label">Guide</h3>
-              </article>
+              <div class="box">
+                <img src="./images/guide.svg" alt="">
+              </div>
 
-              <article class="section__entry">
-                <div class="box">
-                  <img src="./images/eye.svg" alt="">
-                </div>
-                <h3 class="section__entry-label">Eye</h3>
-              </article>
+              <div class="box">
+                <img src="./images/eye.svg" alt="">
+              </div>
 
-              <article class="section__entry">
-                <div class="box">
-                  <img src="./images/twitter.svg" alt="">
-                </div>
-                <h3 class="section__entry-label">Twitter</h3>
-              </article>
-            </div><!-- .section__body -->
+              <div class="box">
+                <img src="./images/twitter.svg" alt="">
+              </div>
+            </article>
           </section>
           <!-- Iconography -->
 
 
-        </main><!-- .wsm-main -->
+        </main><!-- .main -->
         <!-- Main Content -->
 
 

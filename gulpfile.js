@@ -23,20 +23,32 @@ var banner = [
   '\n'
 ].join('');
 
-gulp.task('css-styleguide', function () {
-    return gulp.src('sass/styleguide/styleguide.scss')
-    .pipe(sass({errLogToConsole: true}))
-    .pipe(autoprefixer('last 4 version', 'ie 9'))
-    .pipe(gulp.dest('css/build'))
-    //.pipe(minifyCSS())
-    //.pipe(rename({ suffix: '.min' }))
-    .pipe(header(banner, { package : package }))
-    .pipe(gulp.dest('css/build'))
-    .pipe(browserSync.reload({stream:true}));
-});
+// gulp.task('css-styleguide', function () {
+//     return gulp.src('sass/styleguide/styleguide.scss')
+//     .pipe(sass({errLogToConsole: true}))
+//     .pipe(autoprefixer('last 4 version', 'ie 9'))
+//     .pipe(gulp.dest('css/build'))
+//     //.pipe(minifyCSS())
+//     //.pipe(rename({ suffix: '.min' }))
+//     .pipe(header(banner, { package : package }))
+//     .pipe(gulp.dest('css/build'))
+//     .pipe(browserSync.reload({stream:true}));
+// });
 
-gulp.task('css-style', function () {
-    return gulp.src('sass/style/style.scss')
+// gulp.task('css-style', function () {
+//     return gulp.src('sass/style/style.scss')
+//     .pipe(sass({errLogToConsole: true}))
+//     .pipe(autoprefixer('last 4 version', 'ie 9'))
+//     .pipe(gulp.dest('css/build'))
+//     //.pipe(minifyCSS())
+//     //.pipe(rename({ suffix: '.min' }))
+//     .pipe(header(banner, { package : package }))
+//     .pipe(gulp.dest('css/build'))
+//     .pipe(browserSync.reload({stream:true}));
+// });
+
+gulp.task('style', function () {
+    return gulp.src('sass/style.scss')
     .pipe(sass({errLogToConsole: true}))
     .pipe(autoprefixer('last 4 version', 'ie 9'))
     .pipe(gulp.dest('css/build'))
@@ -72,8 +84,10 @@ gulp.task('bs-reload', function () {
     browserSync.reload();
 });
 
-gulp.task('default', ['css-styleguide','css-style', 'js', 'browser-sync'], function () {
-    gulp.watch("sass/**/*.scss", ['css-styleguide', 'css-style']);
+//gulp.task('default', ['css-styleguide','css-style', 'js', 'browser-sync'], function () {
+gulp.task('default', ['style', 'js', 'browser-sync'], function () {
+    //gulp.watch("sass/**/*.scss", ['css-styleguide', 'css-style']);
+    gulp.watch("sass/**/*.scss", ['style']);
     gulp.watch("js/*.js", ['js']);
     gulp.watch("*.html", ['bs-reload']);
 });

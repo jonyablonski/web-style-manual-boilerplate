@@ -1,0 +1,10 @@
+// Breakpoints
+$breakpoints: (
+  small: 30em,
+  medium: 50em,
+  large: 60em,
+  xlarge: 80em
+);
+
+// Z-Index Management
+$elements: nav, site-header, intro;

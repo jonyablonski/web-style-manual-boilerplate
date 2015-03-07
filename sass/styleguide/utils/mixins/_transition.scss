@@ -1,3 +1,0 @@
-@mixin transition($prop, $duration: .3s, $timing: $ease-in-out-quad) {
-  transition: $prop $duration $timing;
-}

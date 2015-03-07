@@ -6,6 +6,139 @@
  * @version 1.0.0
  * Copyright 2015. MIT licensed.
  */
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ *  Alias for edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Apply a clearfix to an element.
+ */
 /*
 * Fade in
 */
@@ -178,12 +311,12 @@
     -webkit-transform: scale3d(1, 1, 1);
             transform: scale3d(1, 1, 1); } }
 
-.wsm-header, .section__body {
+.wsm-header, .section, .entry__body-content {
   *zoom: 1; }
-  .wsm-header:before, .section__body:before, .wsm-header:after, .section__body:after {
+  .wsm-header:before, .section:before, .entry__body-content:before, .wsm-header:after, .section:after, .entry__body-content:after {
     content: " ";
     display: table; }
-  .wsm-header:after, .section__body:after {
+  .wsm-header:after, .section:after, .entry__body-content:after {
     clear: both; }
 
 .screen-reader-text {
@@ -683,54 +816,184 @@ img, picture {
     display: block;
     padding: 0.75em 0; }
 
+/*
+** Section Parent
+*/
 .section {
   margin: 0 0 3em; }
 
+/*
+** Section Elements
+*/
 .section__header {
   border-bottom: 1px solid rgba(46, 56, 49, 0.1);
   margin: 0 0 1.5em; }
 
-.section__title {
-  font-size: 2.37037em;
+.section__header-title {
   margin: 0 0 0.75em; }
 
-.section__body {
+.section__entry {
   margin: 0 0 1.5em; }
 
 .section__body-header {
-  width: 100%;
   margin: 0 0 1.5em;
-  font-size: 1em; }
+  padding: 0 0 1.5em;
+  font-size: 1em;
+  border-bottom: 1px solid rgba(46, 56, 49, 0.1); }
 
-.section__entry {
-  float: left;
-  width: 48%;
-  margin: 0 1% 1%;
-  text-align: center; }
-  @media (min-width: 30em) {
-    .section__entry {
-      width: 31.3333%; } }
-  @media (min-width: 50em) {
-    .section__entry {
-      width: 23%; } }
-
-.section__entry-label {
+.section__body-label {
   margin: 0.75em 0;
   font-size: 0.75em;
   font-family: 'Museo Slab W01 300', sans-serif;
-  text-transform: none; }
+  text-transform: none;
+  text-align: center; }
 
 .box {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  margin: 0 0 1.5em;
   border: 1px solid rgba(46, 56, 49, 0.1);
   text-align: center; }
+  .box:before, .box:after {
+    content: '';
+    display: table; }
+  .box:after {
+    clear: both; }
+  .box:nth-of-type(2n) {
+    margin-right: 0%;
+    float: right; }
+  .box:nth-of-type(2n+1) {
+    clear: both; }
+  @media (min-width: 30em) {
+    .box {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 31.33333%;
+      margin-left: 0%;
+      margin-right: 3%;
+      text-align: center; }
+      .box:before, .box:after {
+        content: '';
+        display: table; }
+      .box:after {
+        clear: both; }
+      .box:nth-of-type(2n) {
+        margin-right: 3%;
+        float: left; }
+      .box:nth-of-type(2n+1) {
+        clear: none; }
+      .box:nth-of-type(3n) {
+        margin-right: 0%;
+        float: right; }
+      .box:nth-of-type(3n+1) {
+        clear: both; } }
+  @media (min-width: 60em) {
+    .box {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 22.75%;
+      margin-left: 0%;
+      margin-right: 3%;
+      text-align: center; }
+      .box:before, .box:after {
+        content: '';
+        display: table; }
+      .box:after {
+        clear: both; }
+      .box:nth-of-type(3n) {
+        margin-right: 3%;
+        float: left; }
+      .box:nth-of-type(3n+1) {
+        clear: none; }
+      .box:nth-of-type(4n) {
+        margin-right: 0%;
+        float: right; }
+      .box:nth-of-type(4n+1) {
+        clear: both; } }
   .box img {
     display: inline;
     vertical-align: middle; }
 
 .swatch {
-  padding-top: 7.5em;
-  border-radius: 3px;
-  outline: 1px solid rgba(46, 56, 49, 0.1); }
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  margin: 0 0 1.5em;
+  border-radius: 3px; }
+  .swatch:before, .swatch:after {
+    content: '';
+    display: table; }
+  .swatch:after {
+    clear: both; }
+  .swatch:nth-of-type(2n) {
+    margin-right: 0%;
+    float: right; }
+  .swatch:nth-of-type(2n+1) {
+    clear: both; }
+  @media (min-width: 30em) {
+    .swatch {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 31.33333%;
+      margin-left: 0%;
+      margin-right: 3%; }
+      .swatch:before, .swatch:after {
+        content: '';
+        display: table; }
+      .swatch:after {
+        clear: both; }
+      .swatch:nth-of-type(2n) {
+        margin-right: 3%;
+        float: left; }
+      .swatch:nth-of-type(2n+1) {
+        clear: none; }
+      .swatch:nth-of-type(3n) {
+        margin-right: 0%;
+        float: right; }
+      .swatch:nth-of-type(3n+1) {
+        clear: both; } }
+  @media (min-width: 60em) {
+    .swatch {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 22.75%;
+      margin-left: 0%;
+      margin-right: 3%; }
+      .swatch:before, .swatch:after {
+        content: '';
+        display: table; }
+      .swatch:after {
+        clear: both; }
+      .swatch:nth-of-type(3n) {
+        margin-right: 3%;
+        float: left; }
+      .swatch:nth-of-type(3n+1) {
+        clear: none; }
+      .swatch:nth-of-type(4n) {
+        margin-right: 0%;
+        float: right; }
+      .swatch:nth-of-type(4n+1) {
+        clear: both; } }
+  .swatch:before {
+    display: block;
+    padding-top: 7.5em; }
 
 .swatch__label {
   padding: 0.75em;
@@ -739,4 +1002,5 @@ img, picture {
   font-weight: bold;
   letter-spacing: .05em;
   text-transform: none;
-  background-color: #fff; }
+  background-color: #fff;
+  text-align: center; }

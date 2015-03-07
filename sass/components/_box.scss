@@ -1,0 +1,22 @@
+.box {
+	@include column(1/2, $cycle: 2);
+	margin: 0 0 $base-spacing;
+	border: $base-border;
+	text-align: center;
+
+	@include mq(small) {
+		@include column(1/3, $uncycle: 2, $cycle: 3);
+		text-align: center;
+	}
+
+	@include mq(large) {
+		@include column(1/4, $uncycle: 3, $cycle: 4);
+		text-align: center;
+	}
+
+	img {
+		display: inline;
+		vertical-align: middle;
+	}
+
+}

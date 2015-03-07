@@ -1,0 +1,105 @@
+.header {
+	@extend %clearfix;
+	margin: 0 0 $base-spacing;
+	text-align: center;
+
+	@include mq(small) {
+		text-align: left;
+	}
+
+	a {
+		display: block;
+		padding: $base-spacing/2 0;
+
+		@include mq(small) {
+			display: inline-block;
+			padding: 0 $base-spacing/2;
+		}
+
+	}
+
+}
+
+.header__primary {
+	background-color: $base-accent-color;
+}
+
+.header__secondary {
+	background-color: darken($base-accent-color, 30%);
+}
+
+.header__title {
+	display: inline-block;
+	margin: $base-spacing 0;
+	vertical-align: middle;
+	font-size: $base-font-size;
+	letter-spacing: .05em;
+
+	a {
+		padding: 0;
+		color: darken($base-accent-color, 40%);
+
+		&:hover,
+		&:focus {
+			color: darken($base-accent-color, 60%);
+		}
+
+		&:after {
+			content: 'Styleguide';
+			display: block;
+			padding: 0 0 0 $base-spacing/3;
+			font-size: $base-font-size / $base-font-ratio;
+			color: darken($base-accent-color, 20%);
+
+			@include mq(small) {
+				content: '/ Styleguide';
+				display: inline-block;
+			}
+
+		}
+
+	}
+
+}
+
+.header__menu-toggle {
+	display: block;
+	background-color: darken($base-accent-color, 40%);
+	color: $base-background-color;
+	padding: $base-spacing/2;
+	cursor: pointer;
+
+	@include mq(small) {
+		display: none;
+	}
+
+}
+
+.header__nav {
+	display: none;
+	padding: $base-spacing/2 0;
+
+	@include mq(small) {
+		display: block;
+	}
+
+	@include mq(medium) {
+		text-align: right;
+	}
+
+	a {
+		display: block;
+		color: $base-background-color;
+
+		@include mq(small) {
+			display: inline-block;
+		}
+
+	}
+
+	/* States */
+	.nav-is-toggled & {
+		display: block;
+	}
+
+}

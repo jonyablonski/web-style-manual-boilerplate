@@ -1,0 +1,66 @@
+body {
+  color: $base-font-color;
+  font-family: $base-font-family;
+  font-size: $base-font-size;
+  line-height: $base-font-ratio;
+  font-weight: normal;
+  font-style: normal;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  margin: 0;
+  font-family: $header-font-family;
+  line-height: $header-line-height;
+  text-transform: uppercase;
+  font-weight: normal;
+  font-style: normal;
+}
+
+h1 {
+  font-size: $base-font-size * ($base-font-ratio*5);
+}
+
+h2 {
+  font-size: $base-font-size * ($base-font-ratio*4);
+}
+
+h3 {
+  font-size: $base-font-size * ($base-font-ratio*3);
+}
+
+h4 {
+ font-size: $base-font-size * ($base-font-ratio*2);
+}
+
+h5 {
+  font-size: $base-font-size * $base-font-ratio;
+}
+
+h6 {
+  font-size: $base-font-size;
+}
+
+p {
+  margin: 0 0 ($base-spacing);
+}
+
+a {
+  color: $base-link-color;
+  text-decoration: none;
+  cursor: pointer;
+
+  &:hover {
+    color: $hover-link-color;
+  }
+
+  &:active, &:focus {
+    color: $hover-link-color;
+    outline: none;
+  }
+}

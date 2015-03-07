@@ -1,0 +1,37 @@
+// Typography
+$base-font-family: 'Museo Slab W01 300', sans-serif;
+$header-font-family: 'Futura W01 Bold', sans-serif;
+
+// Font Sizes
+$base-font-size: 1em;
+$base-font-ratio: 1.333;
+
+// Line height
+$base-line-height: 1.5;
+$header-line-height: 1.25;
+
+// Other Sizes
+$base-border-radius: 4px;
+$base-spacing: $base-line-height * 1em;
+
+// Colors
+$blue: #2CACE9;
+$grey: #2E3831;
+$off-white: #FCF5E3;
+
+// Background Color
+$base-background-color: $off-white;
+
+// Font Colors
+$base-font-color: $grey;
+$base-accent-color: $blue;
+
+// Link Colors
+$base-link-color: $base-accent-color;
+$hover-link-color: darken($base-accent-color, 15);
+$base-button-color: $base-link-color;
+$hover-button-color: $hover-link-color;
+
+// Border color
+$base-border-color: rgba($base-font-color,.1);
+$base-border: 1px solid $base-border-color;

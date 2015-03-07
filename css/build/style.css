@@ -6,6 +6,514 @@
  * @version 1.0.0
  * Copyright 2015. MIT licensed.
  */
+/*  Syntax Quick Reference
+  --------------------------
+  column($ratios: 1, $offset: 0, $cycle: 0, $uncycle: 0, $gutter: $jeet-gutter)
+  span($ratio: 1, $offset: 0)
+  shift($ratios: 0, $col_or_span: column, $gutter: $jeet-gutter)
+  unshift()
+  edit()
+  center($max_width: 1410px, $pad: 0)
+  stack($pad: 0, $align: false)
+  unstack()
+  align($direction: both)
+  cf()
+*/
+/**
+ * Grid settings.
+ * All values are defaults and can therefore be easily overidden.
+ */
+/**
+ * List functions courtesy of the wonderful folks at Team Sass.
+ * Check out their awesome grid: Singularity.
+ */
+/**
+ * Get  percentage from a given ratio.
+ * @param {number} [$ratio=1] - The column ratio of the element.
+ * @returns {number} - The percentage value.
+ */
+/**
+ * Work out the column widths based on the ratio and gutter sizes.
+ * @param {number} [$ratios=1] - The column ratio of the element.
+ * @param {number} [$gutter=$jeet-gutter] - The gutter for the column.
+ * @returns {list} $width $gutter - A list containing the with and gutter for the element.
+ */
+/**
+ * Get the set layout direction for the project.
+ * @returns {string} $direction - The layout direction.
+ */
+/**
+ * Replace a specified list value with a new value (uses built in set-nth() if available)
+ * @param {list} $list - The list of values you want to alter.
+ * @param {number} $index - The index of the list item you want to replace.
+ * @param {*} $value - The value you want to replace $index with.
+ * @returns {list} $list - The list with the value replaced or removed.
+ * @warn if an invalid index is supplied.
+ */
+/**
+ * Reverse a list (progressively enhanced for Sass 3.3)
+ * @param {list} $list - The list of values you want to reverse.
+ * @returns {list} $result - The reversed list.
+ */
+/**
+ * Get the opposite direction to a given value.
+ * @param {string} $dir - The direction you want the opposite of.
+ * @returns {string} - The opposite direction to $dir.
+ * @warn if an incorrect string is provided.
+ */
+/**
+ * Style an element as a column with a gutter.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [$cycle=0] - Easily create an nth column grid where $cycle equals the number of columns.
+ * @param {number} [$uncycle=0] - Undo a previous cycle value to allow for a new one.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column mixin.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Get the width of a column and nothing else.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Get the gutter size of a column and nothing else.
+ * @param {number} [ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [gutter=jeet.gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * An alias for the column-width function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * An alias for the column-gutter function.
+ * @param [$args...] - All arguments get passed through to column().
+ */
+/**
+ * Style an element as a column without any gutters for a seamless row.
+ * @param {number} [$ratios=1] - A width relative to its container as a fraction.
+ * @param {number} [$offset=0] - A offset specified as a fraction (see $ratios).
+ * @param {number} [cycle=0] - Easily create an nth column grid where cycle equals the number of columns.
+ * @param {number} [uncycle=0] - Undo a previous cycle value to allow for a new one.
+ */
+/**
+ * Reorder columns without altering the HTML.
+ * @param {number} [$ratios=0] - Specify how far along you want the element to move.
+ * @param {string} [$col-or-span=column] - Specify whether the element has a gutter or not.
+ * @param {number} [$gutter=$jeet-gutter] - Specify the gutter width as a percentage of the containers width.
+ */
+/**
+ * Reset an element that has had shift() applied to it.
+ */
+/**
+ * View the grid and its layers for easy debugging.
+ * @param {string} [$color=black] - The background tint applied.
+ * @param {boolean} [$important=false] - Whether to apply the style as !important.
+ */
+/**
+ *  Alias for edit().
+ */
+/**
+ * Horizontally center an element.
+ * @param {number} [$max-width=1410px] - The max width the element can be.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ */
+/**
+ * Uncenter an element.
+ */
+/**
+ * Stack an element so that nothing is either side of it.
+ * @param {number} [$pad=0] - Specify the element's left and right padding.
+ * @param {boolean/string} [$align=false] - Specify the text align for the element.
+ */
+/**
+ * Unstack an element.
+ */
+/**
+ * Center an element on either or both axes.
+ * @requires A parent container with relative positioning.
+ * @param {string} [$direction=both] - Specify which axes to center the element on.
+ */
+/**
+ * Apply a clearfix to an element.
+ */
+.header, .section {
+  *zoom: 1; }
+  .header:before, .section:before, .header:after, .section:after {
+    content: " ";
+    display: table; }
+  .header:after, .section:after {
+    clear: both; }
+
+.screen-reader-text {
+  margin: -1px;
+  padding: 0;
+  width: 1px;
+  height: 1px;
+  overflow: hidden;
+  clip: rect(0 0 0 0);
+  clip: rect(0, 0, 0, 0);
+  position: absolute; }
+
+.text-align-right {
+  text-align: right; }
+
+/*! normalize.css v3.0.2 | MIT License | git.io/normalize */
+/**
+ * 1. Set default font family to sans-serif.
+ * 2. Prevent iOS text size adjust after orientation change, without disabling
+ *    user zoom.
+ */
+html {
+  font-family: sans-serif;
+  /* 1 */
+  -ms-text-size-adjust: 100%;
+  /* 2 */
+  -webkit-text-size-adjust: 100%;
+  /* 2 */ }
+
+/**
+ * Remove default margin.
+ */
+body {
+  margin: 0; }
+
+/* HTML5 display definitions
+   ========================================================================== */
+/**
+ * Correct `block` display not defined for any HTML5 element in IE 8/9.
+ * Correct `block` display not defined for `details` or `summary` in IE 10/11
+ * and Firefox.
+ * Correct `block` display not defined for `main` in IE 11.
+ */
+article, aside, details, figcaption, figure, footer, header, hgroup, main, menu, nav, section, summary {
+  display: block; }
+
+/**
+ * 1. Correct `inline-block` display not defined in IE 8/9.
+ * 2. Normalize vertical alignment of `progress` in Chrome, Firefox, and Opera.
+ */
+audio, canvas, progress, video {
+  display: inline-block;
+  /* 1 */
+  vertical-align: baseline;
+  /* 2 */ }
+
+/**
+ * Prevent modern browsers from displaying `audio` without controls.
+ * Remove excess height in iOS 5 devices.
+ */
+audio:not([controls]) {
+  display: none;
+  height: 0; }
+
+/**
+ * Address `[hidden]` styling not present in IE 8/9/10.
+ * Hide the `template` element in IE 8/9/11, Safari, and Firefox < 22.
+ */
+[hidden], template {
+  display: none; }
+
+/* Links
+   ========================================================================== */
+/**
+ * Remove the gray background color from active links in IE 10.
+ */
+a {
+  background-color: transparent; }
+
+/**
+ * Improve readability when focused and also mouse hovered in all browsers.
+ */
+a:active, a:hover {
+  outline: 0; }
+
+/* Text-level semantics
+   ========================================================================== */
+/**
+ * Address styling not present in IE 8/9/10/11, Safari, and Chrome.
+ */
+abbr[title] {
+  border-bottom: 1px dotted; }
+
+/**
+ * Address style set to `bolder` in Firefox 4+, Safari, and Chrome.
+ */
+b, strong {
+  font-weight: bold; }
+
+/**
+ * Address styling not present in Safari and Chrome.
+ */
+dfn {
+  font-style: italic; }
+
+/**
+ * Address variable `h1` font-size and margin within `section` and `article`
+ * contexts in Firefox 4+, Safari, and Chrome.
+ */
+h1 {
+  font-size: 2em;
+  margin: 0.67em 0; }
+
+/**
+ * Address styling not present in IE 8/9.
+ */
+mark {
+  background: #ff0;
+  color: #000; }
+
+/**
+ * Address inconsistent and variable font size in all browsers.
+ */
+small {
+  font-size: 80%; }
+
+/**
+ * Prevent `sub` and `sup` affecting `line-height` in all browsers.
+ */
+sub, sup {
+  font-size: 75%;
+  line-height: 0;
+  position: relative;
+  vertical-align: baseline; }
+
+sup {
+  top: -0.5em; }
+
+sub {
+  bottom: -0.25em; }
+
+/* Embedded content
+   ========================================================================== */
+/**
+ * Remove border when inside `a` element in IE 8/9/10.
+ */
+img {
+  border: 0; }
+
+/**
+ * Correct overflow not hidden in IE 9/10/11.
+ */
+svg:not(:root) {
+  overflow: hidden; }
+
+/* Grouping content
+   ========================================================================== */
+/**
+ * Address margin not present in IE 8/9 and Safari.
+ */
+figure {
+  margin: 1em 40px; }
+
+/**
+ * Address differences between Firefox and other browsers.
+ */
+hr {
+  box-sizing: content-box;
+  height: 0; }
+
+/**
+ * Contain overflow in all browsers.
+ */
+pre {
+  overflow: auto; }
+
+/**
+ * Address odd `em`-unit font size rendering in all browsers.
+ */
+code, kbd, pre, samp {
+  font-family: monospace, monospace;
+  font-size: 1em; }
+
+/* Forms
+   ========================================================================== */
+/**
+ * Known limitation: by default, Chrome and Safari on OS X allow very limited
+ * styling of `select`, unless a `border` property is set.
+ */
+/**
+ * 1. Correct color not being inherited.
+ *    Known issue: affects color of disabled elements.
+ * 2. Correct font properties not being inherited.
+ * 3. Address margins set differently in Firefox 4+, Safari, and Chrome.
+ */
+button, input, optgroup, select, textarea {
+  color: inherit;
+  /* 1 */
+  font: inherit;
+  /* 2 */
+  margin: 0;
+  /* 3 */ }
+
+/**
+ * Address `overflow` set to `hidden` in IE 8/9/10/11.
+ */
+button {
+  overflow: visible; }
+
+/**
+ * Address inconsistent `text-transform` inheritance for `button` and `select`.
+ * All other form control elements do not inherit `text-transform` values.
+ * Correct `button` style inheritance in Firefox, IE 8/9/10/11, and Opera.
+ * Correct `select` style inheritance in Firefox.
+ */
+button, select {
+  text-transform: none; }
+
+/**
+ * 1. Avoid the WebKit bug in Android 4.0.* where (2) destroys native `audio`
+ *    and `video` controls.
+ * 2. Correct inability to style clickable `input` types in iOS.
+ * 3. Improve usability and consistency of cursor style between image-type
+ *    `input` and others.
+ */
+button, html input[type="button"], input[type="reset"], input[type="submit"] {
+  -webkit-appearance: button;
+  /* 2 */
+  cursor: pointer;
+  /* 3 */ }
+
+/**
+ * Re-set default cursor for disabled elements.
+ */
+button[disabled], html input[disabled] {
+  cursor: default; }
+
+/**
+ * Remove inner padding and border in Firefox 4+.
+ */
+button::-moz-focus-inner, input::-moz-focus-inner {
+  border: 0;
+  padding: 0; }
+
+/**
+ * Address Firefox 4+ setting `line-height` on `input` using `!important` in
+ * the UA stylesheet.
+ */
+input {
+  line-height: normal; }
+
+/**
+ * It's recommended that you don't attempt to style these elements.
+ * Firefox's implementation doesn't respect box-sizing, padding, or width.
+ *
+ * 1. Address box sizing set to `content-box` in IE 8/9/10.
+ * 2. Remove excess padding in IE 8/9/10.
+ */
+input[type="checkbox"], input[type="radio"] {
+  box-sizing: border-box;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Fix the cursor style for Chrome's increment/decrement buttons. For certain
+ * `font-size` values of the `input`, it causes the cursor style of the
+ * decrement button to change from `default` to `text`.
+ */
+input[type="number"]::-webkit-inner-spin-button, input[type="number"]::-webkit-outer-spin-button {
+  height: auto; }
+
+/**
+ * 1. Address `appearance` set to `searchfield` in Safari and Chrome.
+ * 2. Address `box-sizing` set to `border-box` in Safari and Chrome
+ *    (include `-moz` to future-proof).
+ */
+input[type="search"] {
+  -webkit-appearance: textfield;
+  /* 1 */ }
+
+/**
+ * Remove inner padding and search cancel button in Safari and Chrome on OS X.
+ * Safari (but not Chrome) clips the cancel button when the search input has
+ * padding (and `textfield` appearance).
+ */
+input[type="search"]::-webkit-search-cancel-button, input[type="search"]::-webkit-search-decoration {
+  -webkit-appearance: none; }
+
+/**
+ * Define consistent border, margin, and padding.
+ */
+fieldset {
+  border: 1px solid #c0c0c0;
+  margin: 0 2px;
+  padding: 0.35em 0.625em 0.75em; }
+
+/**
+ * 1. Correct `color` not being inherited in IE 8/9/10/11.
+ * 2. Remove padding so people aren't caught out if they zero out fieldsets.
+ */
+legend {
+  border: 0;
+  /* 1 */
+  padding: 0;
+  /* 2 */ }
+
+/**
+ * Remove default vertical scrollbar in IE 8/9/10/11.
+ */
+textarea {
+  overflow: auto; }
+
+/**
+ * Don't inherit the `font-weight` (applied by a rule above).
+ * NOTE: the default cannot safely be changed in Chrome and Safari on OS X.
+ */
+optgroup {
+  font-weight: bold; }
+
+/* Tables
+   ========================================================================== */
+/**
+ * Remove most spacing between table cells.
+ */
+table {
+  border-collapse: collapse;
+  border-spacing: 0; }
+
+td, th {
+  padding: 0; }
+
+/*
+ * Natural Box Layout Model
+ * http://www.paulirish.com/2012/box-sizing-border-box-ftw/
+ */
+html {
+  box-sizing: border-box; }
+
+body {
+  background-color: #FCF5E3; }
+
+*, *:before, *:after {
+  box-sizing: inherit; }
+
+/*
+ * Set States for Media Query Detection in JS
+ */
+body:after {
+  display: none;
+  content: 'small'; }
+  @media (min-width: 50em) {
+    body:after {
+      content: 'medium'; } }
+
+/*
+ * A better looking default horizontal rule
+ */
+hr {
+  border-bottom: 1px solid rgba(46, 56, 49, 0.1);
+  border-left: none;
+  border-right: none;
+  border-top: none;
+  margin: 1.5em 0; }
+
+img, picture {
+  margin: 0;
+  max-width: 100%; }
+
 /*
 * Headline Font / Futura Bold
 */
@@ -25,38 +533,37 @@
 body {
   color: #2E3831;
   font-family: 'Museo Slab W01 300', sans-serif;
-  font-size: ms(0);
-  line-height: 1.5;
+  font-size: 1em;
+  line-height: 1.333;
   font-weight: normal;
   font-style: normal;
-  -webkit-font-smoothing: antialiased;
-  background-color: #FCF5E3; }
+  -webkit-font-smoothing: antialiased; }
 
 h1, h2, h3, h4, h5, h6 {
+  margin: 0;
   font-family: 'Futura W01 Bold', sans-serif;
   line-height: 1.25;
-  margin: 0;
   text-transform: uppercase;
   font-weight: normal;
   font-style: normal; }
 
 h1 {
-  font-size: ms(6); }
+  font-size: 6.665em; }
 
 h2 {
-  font-size: ms(5); }
+  font-size: 5.332em; }
 
 h3 {
-  font-size: ms(4); }
+  font-size: 3.999em; }
 
 h4 {
-  font-size: ms(3); }
+  font-size: 2.666em; }
 
 h5 {
-  font-size: ms(2); }
+  font-size: 1.333em; }
 
 h6 {
-  font-size: ms(1); }
+  font-size: 1em; }
 
 p {
   margin: 0 0 1.5em; }
@@ -71,13 +578,345 @@ a {
     color: #1381b6;
     outline: none; }
 
-blockquote {
-  margin: 1.5em 0 0.75em; }
+.container {
+  margin: 0 auto;
+  padding: 0 1.5em;
+  max-width: 60em; }
 
-cite {
-  font-size: normal;
-  font-style: normal;
-  font-family: "Futura W01 Bold";
-  font-size: ms(-2); }
-  cite:before {
-    content: "\2014 \00A0"; }
+.content {
+  position: relative; }
+
+.contents-menu, .main {
+  width: 100%; }
+
+.contents-menu {
+  /* States */ }
+  @media (min-width: 50em) {
+    .contents-menu {
+      position: absolute;
+      top: 0;
+      width: 20%; } }
+  .contents-menu.is-sticky {
+    position: fixed;
+    top: 1.5em; }
+
+.main {
+  margin: 0 0 1.5em; }
+  @media (min-width: 50em) {
+    .main {
+      float: left;
+      width: 80%;
+      margin: 0 0 1.5em 20%;
+      padding: 0 0 0 1.5em;
+      border-left: 1px solid rgba(46, 56, 49, 0.1); } }
+
+.header {
+  margin: 0 0 1.5em;
+  text-align: center; }
+  @media (min-width: 30em) {
+    .header {
+      text-align: left; } }
+  .header a {
+    display: block;
+    padding: 0.75em 0; }
+    @media (min-width: 30em) {
+      .header a {
+        display: inline-block;
+        padding: 0 0.75em; } }
+
+.header__primary {
+  background-color: #2CACE9; }
+
+.header__secondary {
+  background-color: #0c5070; }
+
+.header__title {
+  display: inline-block;
+  margin: 1.5em 0;
+  vertical-align: middle;
+  font-size: 1em;
+  letter-spacing: .05em; }
+  .header__title a {
+    padding: 0;
+    color: #072f42; }
+    .header__title a:hover, .header__title a:focus {
+      color: black; }
+    .header__title a:after {
+      content: 'Styleguide';
+      display: block;
+      padding: 0 0 0 0.5em;
+      font-size: 0.75019em;
+      color: #11719e; }
+      @media (min-width: 30em) {
+        .header__title a:after {
+          content: '/ Styleguide';
+          display: inline-block; } }
+
+.header__menu-toggle {
+  display: block;
+  background-color: #072f42;
+  color: #FCF5E3;
+  padding: 0.75em;
+  cursor: pointer; }
+  @media (min-width: 30em) {
+    .header__menu-toggle {
+      display: none; } }
+
+.header__nav {
+  display: none;
+  padding: 0.75em 0;
+  /* States */ }
+  @media (min-width: 30em) {
+    .header__nav {
+      display: block; } }
+  @media (min-width: 50em) {
+    .header__nav {
+      text-align: right; } }
+  .header__nav a {
+    display: block;
+    color: #FCF5E3; }
+    @media (min-width: 30em) {
+      .header__nav a {
+        display: inline-block; } }
+  .nav-is-toggled .header__nav {
+    display: block; }
+
+.nav {
+  width: 100%;
+  margin: 0 0 1.5em;
+  background-color: #072f42;
+  text-align: center; }
+  @media (min-width: 30em) {
+    .nav {
+      text-align: left; } }
+  @media (min-width: 50em) {
+    .nav {
+      text-align: right; } }
+
+.nav a {
+  display: block;
+  padding: 0.75em; }
+  @media (min-width: 30em) {
+    .nav a {
+      display: inline-block; } }
+
+.contents-menu {
+  display: none; }
+  @media (min-width: 50em) {
+    .contents-menu {
+      display: block;
+      margin: 0 0 1.5em; } }
+  .contents-menu a {
+    display: block;
+    padding: 0.75em 0; }
+
+/*
+** Section Parent
+*/
+.section {
+  margin: 0 0 3em; }
+
+/*
+** Section Elements
+*/
+.section__header {
+  border-bottom: 1px solid rgba(46, 56, 49, 0.1);
+  margin: 0 0 1.5em; }
+
+.section__header-title {
+  font-size: 1.333em; }
+
+.section__content {
+  margin: 0 0 1.5em; }
+
+.section__content-title {
+  margin: 0 0 1.5em;
+  padding: 0 0 1.5em;
+  font-size: 1em;
+  border-bottom: 1px solid rgba(46, 56, 49, 0.1); }
+
+.section__content-label {
+  margin: 0.75em 0;
+  font-size: 0.75019em;
+  font-family: 'Museo Slab W01 300', sans-serif;
+  text-transform: none; }
+
+.box {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  margin: 0 0 1.5em;
+  border: 1px solid rgba(46, 56, 49, 0.1);
+  text-align: center; }
+  .box:before, .box:after {
+    content: '';
+    display: table; }
+  .box:after {
+    clear: both; }
+  .box:nth-of-type(2n) {
+    margin-right: 0%;
+    float: right; }
+  .box:nth-of-type(2n+1) {
+    clear: both; }
+  @media (min-width: 30em) {
+    .box {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 31.33333%;
+      margin-left: 0%;
+      margin-right: 3%;
+      text-align: center; }
+      .box:before, .box:after {
+        content: '';
+        display: table; }
+      .box:after {
+        clear: both; }
+      .box:nth-of-type(2n) {
+        margin-right: 3%;
+        float: left; }
+      .box:nth-of-type(2n+1) {
+        clear: none; }
+      .box:nth-of-type(3n) {
+        margin-right: 0%;
+        float: right; }
+      .box:nth-of-type(3n+1) {
+        clear: both; } }
+  @media (min-width: 60em) {
+    .box {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 22.75%;
+      margin-left: 0%;
+      margin-right: 3%;
+      text-align: center; }
+      .box:before, .box:after {
+        content: '';
+        display: table; }
+      .box:after {
+        clear: both; }
+      .box:nth-of-type(3n) {
+        margin-right: 3%;
+        float: left; }
+      .box:nth-of-type(3n+1) {
+        clear: none; }
+      .box:nth-of-type(4n) {
+        margin-right: 0%;
+        float: right; }
+      .box:nth-of-type(4n+1) {
+        clear: both; } }
+  .box img {
+    display: inline;
+    vertical-align: middle; }
+
+.swatch {
+  *zoom: 1;
+  float: left;
+  clear: none;
+  text-align: inherit;
+  width: 48.5%;
+  margin-left: 0%;
+  margin-right: 3%;
+  margin: 0 0 1.5em; }
+  .swatch:before, .swatch:after {
+    content: '';
+    display: table; }
+  .swatch:after {
+    clear: both; }
+  .swatch:nth-of-type(2n) {
+    margin-right: 0%;
+    float: right; }
+  .swatch:nth-of-type(2n+1) {
+    clear: both; }
+  @media (min-width: 30em) {
+    .swatch {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 31.33333%;
+      margin-left: 0%;
+      margin-right: 3%; }
+      .swatch:before, .swatch:after {
+        content: '';
+        display: table; }
+      .swatch:after {
+        clear: both; }
+      .swatch:nth-of-type(2n) {
+        margin-right: 3%;
+        float: left; }
+      .swatch:nth-of-type(2n+1) {
+        clear: none; }
+      .swatch:nth-of-type(3n) {
+        margin-right: 0%;
+        float: right; }
+      .swatch:nth-of-type(3n+1) {
+        clear: both; } }
+  @media (min-width: 60em) {
+    .swatch {
+      *zoom: 1;
+      float: left;
+      clear: none;
+      text-align: inherit;
+      width: 22.75%;
+      margin-left: 0%;
+      margin-right: 3%; }
+      .swatch:before, .swatch:after {
+        content: '';
+        display: table; }
+      .swatch:after {
+        clear: both; }
+      .swatch:nth-of-type(3n) {
+        margin-right: 3%;
+        float: left; }
+      .swatch:nth-of-type(3n+1) {
+        clear: none; }
+      .swatch:nth-of-type(4n) {
+        margin-right: 0%;
+        float: right; }
+      .swatch:nth-of-type(4n+1) {
+        clear: both; } }
+  .swatch:before {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 4px;
+    position: relative;
+    top: 1px;
+    display: block;
+    padding-top: 7.5em;
+    border: 1px solid rgba(46, 56, 49, 0.1); }
+
+.swatch__label {
+  position: relative;
+  padding: 1.5em;
+  font-size: ms(-1);
+  font-family: 'Museo Slab W01 300', sans-serif;
+  font-weight: bold;
+  letter-spacing: .05em;
+  text-transform: none;
+  background-color: #fff;
+  text-align: center; }
+
+/*
+** Color Swatches
+*/
+.sg-swatch-1:before {
+  background-color: #2CACE9; }
+
+.sg-swatch-2:before {
+  background-color: #2E3831; }
+
+.sg-swatch-3:before {
+  background-color: #FCF5E3; }
+
+/*
+** Textures
+*/
+.sg-texture-1:before {
+  background: url(../../images/halftone.png) repeat; }

@@ -1,0 +1,25 @@
+.nav {
+	width: 100%;
+	margin: 0 0 $base-spacing;
+	background-color: darken($base-accent-color, 40%);
+	text-align: center;
+
+	@include mq(small) {
+		text-align: left;
+	}
+
+	@include mq(medium) {
+		text-align: right;
+	}
+
+}
+
+.nav a {
+	display: block;
+	padding: $base-spacing/2;
+
+	@include mq(small) {
+		display: inline-block;
+	}
+
+}

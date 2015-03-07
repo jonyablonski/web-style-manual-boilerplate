@@ -1,0 +1,22 @@
+/*
+** Color Swatches
+*/
+.sg-swatch-1:before {
+	background-color: $blue;
+}
+
+.sg-swatch-2:before {
+	background-color: $grey;
+}
+
+.sg-swatch-3:before {
+	background-color: $off-white;
+}
+
+
+/*
+** Textures
+*/
+.sg-texture-1:before {
+	background: url(../../images/halftone.png) repeat;
+}

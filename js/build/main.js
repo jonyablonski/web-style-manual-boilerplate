@@ -938,8 +938,8 @@ var App = (function () {
     });
 
     [].forEach.call(boxes, function(el) {
-        el.style.height = tallest + 48 + 'px';
-        el.style.lineHeight = tallest + 48 + 'px';
+        el.style.height = (tallest / 16) + 2 + 'em';
+        el.style.lineHeight = (tallest / 16) + 2 + 'em';
     });
 
   })();

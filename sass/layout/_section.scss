@@ -1,0 +1,38 @@
+/*
+** Section Parent
+*/
+.section {
+	@extend %clearfix;
+	margin: 0 0 $base-spacing*2;
+}
+
+
+/*
+** Section Elements
+*/
+.section__header {
+	border-bottom: $base-border;
+	margin: 0 0 $base-spacing;
+}
+
+.section__header-title {
+	font-size: $base-font-size * $base-font-ratio;
+}
+
+.section__content {
+	margin: 0 0 $base-spacing;
+}
+
+.section__content-title {
+	margin: 0 0 $base-spacing;
+	padding: 0 0 $base-spacing;
+	font-size: $base-font-size;
+	border-bottom: $base-border;
+}
+
+.section__content-label {
+	margin: $base-spacing/2 0;
+	font-size: $base-font-size / $base-font-ratio;
+	font-family: $base-font-family;
+	text-transform: none;
+}
