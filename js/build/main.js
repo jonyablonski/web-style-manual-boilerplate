@@ -1,11 +1,3 @@
-/*!
- * Web Style Manual Boilerplate
- * A simple styleguide boilerplate for web projects
- * http://jonyablonski.com
- * @author Jon Yablosnki
- * @version 1.0.0
- * Copyright 2015. MIT licensed.
- */
 /*
  * classList.js: Cross-browser full element.classList implementation.
  * 2014-07-23
